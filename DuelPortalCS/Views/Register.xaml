@@ -1,0 +1,37 @@
+﻿<controls:ChildWindow x:Class="DuelPortalCS.Views.Register"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="454" Height="372"
+           Title="Register" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="CancelButton" Content="Cancel" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" Click="CancelButton_Click"  />
+        <TextBlock Height="28" HorizontalAlignment="Left" Margin="20,12,0,0" Name="Label1" VerticalAlignment="Top" Width="78" Text="Username" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="126,8,0,0" Name="txtUsername" VerticalAlignment="Top" Width="159" />
+        <TextBlock Height="28" HorizontalAlignment="Left" Margin="20,36,0,0" Name="Label2" VerticalAlignment="Top" Width="78" Text="Password" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="126,37,0,0" Name="txtPassword" VerticalAlignment="Top" Width="159" />
+        <TextBlock Height="28" HorizontalAlignment="Left" Margin="20,66,0,0" Name="Label3" VerticalAlignment="Top" Width="78" Text="Email" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="126,66,0,0" Name="txtEmail" VerticalAlignment="Top" Width="159" />
+        <Button Content="Send Verification Code" Height="23" HorizontalAlignment="Left" Margin="163,193,0,0" Name="cmdSendVerification" VerticalAlignment="Top" Width="159" Click="cmdSendVerification_Click"/>
+        <TextBlock Height="28" HorizontalAlignment="Left" Margin="12,255,0,0" Name="lblVerification" VerticalAlignment="Top" Width="106" Text="Enter Verification" Grid.RowSpan="2" Visibility="Collapsed" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="144,255,0,0" Name="txtVerify" VerticalAlignment="Top" Width="136" IsEnabled="False" Visibility="Collapsed" />
+        <TextBlock Height="28" HorizontalAlignment="Left" Margin="126,221,0,0" Name="lblSentVerification" VerticalAlignment="Top" Width="177" Text="Verification Code was Sent." Foreground="#FFEB2700" Visibility="Collapsed" />
+        <TextBlock Height="28" HorizontalAlignment="Left" Margin="292,8,0,0" Name="lblNeedUsername" VerticalAlignment="Top" Width="120" Text="This is Required." Visibility="Collapsed" />
+        <TextBlock Text="This is Required." Height="28" HorizontalAlignment="Left" Margin="292,37,0,0" Name="lblNeedPassword" VerticalAlignment="Top" Width="120" Visibility="Collapsed" />
+        <TextBlock Text="Valid Email is Required." Height="28" HorizontalAlignment="Left" Margin="292,66,0,0" Name="lblNeedEmail" VerticalAlignment="Top" Width="132" Visibility="Collapsed" />
+        <CheckBox Content="Allow other users to email me" Height="16" HorizontalAlignment="Left" Margin="126,118,0,0" Name="chkAllowMessaging" VerticalAlignment="Top" IsChecked="True" />
+        <RadioButton Content="Default" Height="16" HorizontalAlignment="Left" Margin="12,163,0,0" Name="rdDefault" VerticalAlignment="Top" IsChecked="True" />
+        <RadioButton Content="Custom - &gt;" Height="16" HorizontalAlignment="Left" Margin="115,163,0,0" Name="rdCustom" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="218,160,0,0" Name="cmbCustom" VerticalAlignment="Top" Width="120">
+
+        </ComboBox>
+        <TextBlock Height="28" HorizontalAlignment="Left" Margin="292,188,0,0" Name="lblNeedCustom" VerticalAlignment="Top" Width="120" Text="Select a Custom Set." Visibility="Collapsed" />
+        <Button Content="Verify" Height="23" HorizontalAlignment="Left" Margin="124,284,0,0" Name="cmdVerify" VerticalAlignment="Top" Width="161" Grid.RowSpan="2" Visibility="Collapsed" Click="cmdVerify_Click" />
+        <TextBlock Height="17" HorizontalAlignment="Left" Margin="12,140,0,0" Name="Label4" VerticalAlignment="Top" Width="341" Text="(Your email will not be visible. Admins can still email you.)" />
+    </Grid>
+</controls:ChildWindow>

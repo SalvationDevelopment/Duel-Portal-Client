@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Service1Console" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Service1Console" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Service1Console/Imports">
+      <xsd:import schemaLocation="http://localhost:55555/Service1Console.svc?xsd=xsd0" namespace="Service1Console" />
+      <xsd:import schemaLocation="http://localhost:55555/Service1Console.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:55555/Service1Console.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DuelPortalCS.Web" />
+      <xsd:import schemaLocation="http://localhost:55555/Service1Console.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1Console_populateSQL_InputMessage">
+    <wsdl:part name="parameters" element="tns:populateSQL" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_populateSQL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:populateSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_submitCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:submitCard" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_submitCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:submitCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_editCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:editCard" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_editCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_AddOrChangeCardCCG_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrChangeCardCCG" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_AddOrChangeCardCCG_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrChangeCardCCGResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_deleteCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCard" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_deleteCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_shareCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:shareCard" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_shareCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:shareCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_userLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:userLogin" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_userLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:userLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_createOrVerifyNewUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:createOrVerifyNewUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_createOrVerifyNewUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createOrVerifyNewUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_ResendVerification_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResendVerification" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_ResendVerification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResendVerificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_getAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_getAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_rate_InputMessage">
+    <wsdl:part name="parameters" element="tns:rate" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_rate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:rateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_GetUserData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserData" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_GetUserData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_SetUserData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserData" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_SetUserData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_SetPool_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPool" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_SetPool_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPoolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_getRating_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRating" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_getRating_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_submitDeck_InputMessage">
+    <wsdl:part name="parameters" element="tns:submitDeck" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_submitDeck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:submitDeckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_loadDeck_InputMessage">
+    <wsdl:part name="parameters" element="tns:loadDeck" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_loadDeck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loadDeckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_SaveDeck_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDeck" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_SaveDeck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDeckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_NewDeck_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewDeck" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_NewDeck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewDeckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_getListOfMyDecks_InputMessage">
+    <wsdl:part name="parameters" element="tns:getListOfMyDecks" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_getListOfMyDecks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getListOfMyDecksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_deleteDeck_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteDeck" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_deleteDeck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteDeckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_deleteAllCards_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteAllCards" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_deleteAllCards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteAllCardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_deleteAllDecks_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteAllDecks" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_deleteAllDecks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteAllDecksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_getFullImageURL_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFullImageURL" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_getFullImageURL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFullImageURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_getListOfImages_InputMessage">
+    <wsdl:part name="parameters" element="tns:getListOfImages" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_getListOfImages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getListOfImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_getAvatarImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAvatarImage" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_getAvatarImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAvatarImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_saveImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveImage" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_saveImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_saveTempImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveTempImage" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_saveTempImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveTempImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_InetConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:InetConnection" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_InetConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InetConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_SendEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmail" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_SendEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_WriteErrorReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteErrorReport" />
+  </wsdl:message>
+  <wsdl:message name="IService1Console_WriteErrorReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteErrorReportResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1Console">
+    <wsdl:operation name="populateSQL">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/populateSQL" message="tns:IService1Console_populateSQL_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/populateSQLResponse" message="tns:IService1Console_populateSQL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="submitCard">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/submitCard" message="tns:IService1Console_submitCard_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/submitCardResponse" message="tns:IService1Console_submitCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editCard">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/editCard" message="tns:IService1Console_editCard_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/editCardResponse" message="tns:IService1Console_editCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrChangeCardCCG">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/AddOrChangeCardCCG" message="tns:IService1Console_AddOrChangeCardCCG_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/AddOrChangeCardCCGResponse" message="tns:IService1Console_AddOrChangeCardCCG_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCard">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/deleteCard" message="tns:IService1Console_deleteCard_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/deleteCardResponse" message="tns:IService1Console_deleteCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="shareCard">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/shareCard" message="tns:IService1Console_shareCard_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/shareCardResponse" message="tns:IService1Console_shareCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="userLogin">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/userLogin" message="tns:IService1Console_userLogin_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/userLoginResponse" message="tns:IService1Console_userLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createOrVerifyNewUser">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/createOrVerifyNewUser" message="tns:IService1Console_createOrVerifyNewUser_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/createOrVerifyNewUserResponse" message="tns:IService1Console_createOrVerifyNewUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResendVerification">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/ResendVerification" message="tns:IService1Console_ResendVerification_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/ResendVerificationResponse" message="tns:IService1Console_ResendVerification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllUsers">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/getAllUsers" message="tns:IService1Console_getAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/getAllUsersResponse" message="tns:IService1Console_getAllUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="rate">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/rate" message="tns:IService1Console_rate_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/rateResponse" message="tns:IService1Console_rate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/GetUserData" message="tns:IService1Console_GetUserData_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/GetUserDataResponse" message="tns:IService1Console_GetUserData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserData">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/SetUserData" message="tns:IService1Console_SetUserData_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/SetUserDataResponse" message="tns:IService1Console_SetUserData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPool">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/SetPool" message="tns:IService1Console_SetPool_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/SetPoolResponse" message="tns:IService1Console_SetPool_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRating">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/getRating" message="tns:IService1Console_getRating_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/getRatingResponse" message="tns:IService1Console_getRating_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="submitDeck">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/submitDeck" message="tns:IService1Console_submitDeck_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/submitDeckResponse" message="tns:IService1Console_submitDeck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loadDeck">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/loadDeck" message="tns:IService1Console_loadDeck_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/loadDeckResponse" message="tns:IService1Console_loadDeck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDeck">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/SaveDeck" message="tns:IService1Console_SaveDeck_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/SaveDeckResponse" message="tns:IService1Console_SaveDeck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewDeck">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/NewDeck" message="tns:IService1Console_NewDeck_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/NewDeckResponse" message="tns:IService1Console_NewDeck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getListOfMyDecks">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/getListOfMyDecks" message="tns:IService1Console_getListOfMyDecks_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/getListOfMyDecksResponse" message="tns:IService1Console_getListOfMyDecks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteDeck">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/deleteDeck" message="tns:IService1Console_deleteDeck_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/deleteDeckResponse" message="tns:IService1Console_deleteDeck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllCards">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/deleteAllCards" message="tns:IService1Console_deleteAllCards_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/deleteAllCardsResponse" message="tns:IService1Console_deleteAllCards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllDecks">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/deleteAllDecks" message="tns:IService1Console_deleteAllDecks_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/deleteAllDecksResponse" message="tns:IService1Console_deleteAllDecks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFullImageURL">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/getFullImageURL" message="tns:IService1Console_getFullImageURL_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/getFullImageURLResponse" message="tns:IService1Console_getFullImageURL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getListOfImages">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/getListOfImages" message="tns:IService1Console_getListOfImages_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/getListOfImagesResponse" message="tns:IService1Console_getListOfImages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAvatarImage">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/getAvatarImage" message="tns:IService1Console_getAvatarImage_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/getAvatarImageResponse" message="tns:IService1Console_getAvatarImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveImage">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/saveImage" message="tns:IService1Console_saveImage_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/saveImageResponse" message="tns:IService1Console_saveImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveTempImage">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/saveTempImage" message="tns:IService1Console_saveTempImage_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/saveTempImageResponse" message="tns:IService1Console_saveTempImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InetConnection">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/InetConnection" message="tns:IService1Console_InetConnection_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/InetConnectionResponse" message="tns:IService1Console_InetConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/SendEmail" message="tns:IService1Console_SendEmail_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/SendEmailResponse" message="tns:IService1Console_SendEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteErrorReport">
+      <wsdl:input wsaw:Action="Service1Console/IService1Console/WriteErrorReport" message="tns:IService1Console_WriteErrorReport_InputMessage" />
+      <wsdl:output wsaw:Action="Service1Console/IService1Console/WriteErrorReportResponse" message="tns:IService1Console_WriteErrorReport_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

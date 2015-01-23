@@ -1,0 +1,25 @@
+﻿<configuration>
+
+    <system.serviceModel>
+
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_SocketService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IService1Console" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:55555/Service1Console.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IService1Console"
+                contract="SQLReference.IService1Console" name="BasicHttpBinding_IService1Console" />
+        </client>
+        <!--http://localhost:56768/Service1.svc-->
+      <!--http://192.227.234.101/Service1.svc-->
+    </system.serviceModel>
+</configuration>

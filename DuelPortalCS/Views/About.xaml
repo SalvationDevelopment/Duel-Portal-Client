@@ -1,0 +1,22 @@
+﻿<navigation:Page xmlns:my="clr-namespace:SilverFlow.Controls;assembly=SilverFlow.Controls"  x:Class="DuelPortalCS.About" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+    mc:Ignorable="d"
+    Title="About" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+    Style="{StaticResource PageStyle}" Height="455" Width="635">
+
+    <Canvas x:Name="LayoutRoot"> 
+            <StackPanel x:Name="ContentStackPanel">
+                    <TextBlock x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}" 
+                           Text="About"/>
+               <TextBlock x:Name="ContentText" Style="{StaticResource ContentTextStyle}" 
+                           Text="About page content" Height="294" Width="632" />
+                <HyperlinkButton Content="For more information, see our FAQ" Height="23" Name="HyperlinkButton1" Width="201" Foreground="#FF358DDB" Click="HyperlinkButton1_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                <Button Content="Button" Height="23"  Name="button2" Width="75" Click="button2_Click" Visibility="Collapsed" />
+           
+        </StackPanel>
+    </Canvas>
+
+</navigation:Page>

@@ -1,0 +1,59 @@
+﻿<controls:ChildWindow x:Class="DuelPortalCS.Views.frmView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="710" Height="480" 
+           Title="Viewing:" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    <Canvas x:Name="LayoutRoot" Margin="2" Background="White" AllowDrop="True" RenderTransformOrigin="0.5,0.5" >
+
+        <Button x:Name="OKButton" Content="Cancel" Width="161" Height="23" HorizontalAlignment="Left" Click="OKButton_Click" Canvas.Left="28" Canvas.Top="227" />
+       <Button Content="Send to Grave" Height="23" HorizontalAlignment="Left" Margin="28,37,0,0" Name="cmdToGrave" VerticalAlignment="Top" Width="161" Click="cmdToGrave_Click" />
+        <Button Content="Banish" Height="23" HorizontalAlignment="Left" Margin="28,64,0,0" Name="cmdBanish" VerticalAlignment="Top" Width="161" Click="cmdBanish_Click" />
+        <Button Content="Add to Hand" Height="23" HorizontalAlignment="Left" Margin="28,8,0,0" Name="cmdToHand" VerticalAlignment="Top" Width="161" Click="cmdToHand_Click" />
+        <Button Content="To Top of Deck" Height="23" HorizontalAlignment="Left" Margin="28,115,0,0" Name="cmdToTop" VerticalAlignment="Top" Width="161" Click="cmdToTop_Click" />
+        <Button Content="To Bottom of Deck" Height="23" HorizontalAlignment="Left" Margin="28,143,0,0" Name="cmdToBottom" VerticalAlignment="Top" Width="161" Click="cmdToBottom_Click" />
+        <Button Content="Special Summon / To Field" Height="23" HorizontalAlignment="Left" Name="cmdToField" VerticalAlignment="Top" Width="161" Click="cmdToField_Click" Canvas.Left="28" Canvas.Top="199" />
+
+        <CheckBox x:Name="chkBanishFacedown" Content="Banish Face-Down" HorizontalAlignment="Left" Margin="52,92,0,0" VerticalAlignment="Top" Height="23" RenderTransformOrigin="0.325,0.486" FlowDirection="LeftToRight">
+
+        </CheckBox>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="292" Margin="219,0,0,0" VerticalAlignment="Top" Width="435">
+            <Border.Child>
+                <Canvas>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" Height="137" VerticalAlignment="Top" Width="433" HorizontalAlignment="Left" Canvas.Top="89" >
+                        <TextBlock   x:Name="lblDuelLore"  TextWrapping="Wrap" />
+                    </ScrollViewer>
+                    <StackPanel Height="22" HorizontalAlignment="Left"  Name="stackPanel1" VerticalAlignment="Top" Width="364" Orientation="Horizontal" Canvas.Left="69" Canvas.Top="39">
+                        <Image  Name="imgStars12" Stretch="None" Width="30" />
+                        <Image  Name="imgStars11" Stretch="None" Width="30" />
+                        <Image  Name="imgStars10" Stretch="None" Width="30" />
+                        <Image Height="Auto" Name="imgStars9" Stretch="None" Width="30" />
+                        <Image Height="Auto" Name="imgStars8" Stretch="None" Width="30" />
+                        <Image Height="Auto" Name="imgStars7" Stretch="None" Width="30" />
+                        <Image Height="Auto" Name="imgStars6" Stretch="None" Width="30" />
+                        <Image Height="Auto" Name="imgStars5" Stretch="None" Width="30" />
+                        <Image Height="Auto" Name="imgStars4" Stretch="None" Width="30" />
+                        <Image Height="Auto" Name="imgStars3" Stretch="None" Width="30" />
+                        <Image Height="Auto" Name="imgStars2" Stretch="None" Width="30" />
+                        <Image Height="Auto" Name="imgStars1" Stretch="None" Width="30" />
+                    </StackPanel>
+                    <TextBlock FontSize="16" Height="34" HorizontalAlignment="Left" x:Name="lblDuelName" VerticalAlignment="Top" Width="433" TextAlignment="Center" FontWeight="SemiBold" />
+                    <TextBlock Height="28" HorizontalAlignment="Left" x:Name="lblDuelType" VerticalAlignment="Top" Width="231" Canvas.Left="10" Canvas.Top="61" />
+                    <Image Height="33" HorizontalAlignment="Right" x:Name="imgSTIcon" Stretch="Fill" VerticalAlignment="Top" Width="33" Canvas.Left="390" Canvas.Top="51" />
+                    <Image Height="40" HorizontalAlignment="Left" x:Name="imgDuelAttribute" Stretch="Fill" Width="40" Canvas.Left="390" />
+                    <TextBlock FontSize="48" Text="/" x:Name="lblSlash" Canvas.Left="194" Canvas.Top="214" Visibility="Collapsed" />
+                    <Border x:Name="BordATK" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" VerticalAlignment="Top" Width="88" Canvas.Left="69" Canvas.Top="231" Visibility="Collapsed">
+                        <TextBlock TextWrapping="Wrap" Text="" x:Name="lblATK" FontSize="16" />
+                    </Border>
+                    <Border x:Name="BordDEF" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="39" VerticalAlignment="Top" Width="88" Canvas.Left="254" Canvas.Top="231" Visibility="Collapsed">
+                        <TextBlock TextWrapping="Wrap" Text="" x:Name="lblDEF" FontSize="16"/>
+                    </Border>
+                </Canvas>
+            </Border.Child>
+        </Border>
+        <ScrollViewer HorizontalAlignment="Left" Height="140" Margin="28,297,0,0" VerticalAlignment="Top" Width="626" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" >
+            <StackPanel x:Name="staCards" Orientation="Horizontal" />
+        </ScrollViewer>
+        <Button Content="To Extra Deck" Height="23" HorizontalAlignment="Left" x:Name="cmdToExtra" VerticalAlignment="Top" Width="161" Click="cmdToExtra_Click" Canvas.Left="28" Canvas.Top="171" />
+    </Canvas>
+</controls:ChildWindow>

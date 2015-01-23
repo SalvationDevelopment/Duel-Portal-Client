@@ -1,0 +1,38 @@
+﻿<navigation:Page x:Class="DuelPortalCS.Views.Mail" 
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           Title="Mail Page" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" Height="540" Width="915"> 
+    <Canvas x:Name="LayoutRoot" >
+        <TextBox Height="23" HorizontalAlignment="Left" Name="txtSubject" VerticalAlignment="Top" Width="264" Canvas.Left="237" Canvas.Top="188" />
+        <TextBlock Height="28" HorizontalAlignment="Left" Name="Label1" VerticalAlignment="Top" Width="59" Text="Subject" Canvas.Left="172" Canvas.Top="188" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Name="cmbAddress" VerticalAlignment="Top" Width="150" IsEnabled="False" DropDownClosed="cmbAddress_SelectionChanged" Canvas.Left="265" Canvas.Top="150">
+            <ComboBoxItem />
+        </ComboBox>
+        <TextBlock Height="28" HorizontalAlignment="Left" Name="Label2" VerticalAlignment="Top" Width="87" Text="Send to User:" Canvas.Left="177" Canvas.Top="153" />
+        <TextBox Height="171" HorizontalAlignment="Left" Name="txtBody" VerticalAlignment="Top" Width="264" TextWrapping="Wrap" Canvas.Left="237" Canvas.Top="230" />
+        <TextBlock Height="28" HorizontalAlignment="Left" Name="Label3" VerticalAlignment="Top" Width="55" Text="Message" Canvas.Left="172" Canvas.Top="229" />
+        <TextBlock Height="28" HorizontalAlignment="Left" Name="Label4" VerticalAlignment="Top" Width="284" Text="Send an email to a Duel Portal user(s)" FontSize="14" Canvas.Left="217" Canvas.Top="101" />
+        <Button Content="Send" Height="23" HorizontalAlignment="Left" Name="cmdSend" VerticalAlignment="Top" Width="119" Click="cmdSend_Click" Canvas.Left="296" Canvas.Top="423" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Name="lblAdditional" Text="Additional Users" VerticalAlignment="Top" Width="115" Canvas.Left="425" Canvas.Top="152" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Name="cmbAdditional1" VerticalAlignment="Top" Width="120" IsEnabled="False" DropDownClosed="cmbAdditional1_SelectionChanged" Canvas.Left="546" Canvas.Top="150">
+            <ComboBoxItem />
+        </ComboBox>
+        <ComboBox Height="23" HorizontalAlignment="Left" Name="cmbAdditional2" VerticalAlignment="Top" Width="120" IsEnabled="False" DropDownClosed="cmbAdditional2_SelectionChanged" Canvas.Left="546" Canvas.Top="188">
+            <ComboBoxItem />
+        </ComboBox>
+        <ComboBox Height="23" HorizontalAlignment="Left" Name="cmbAdditional3" VerticalAlignment="Top" Width="120" IsEnabled="False" DropDownClosed="cmbAdditional3_SelectionChanged" Canvas.Left="546" Canvas.Top="225">
+            <ComboBoxItem />
+        </ComboBox>
+        <ComboBox Height="23" HorizontalAlignment="Left" Name="cmbAdditional4" VerticalAlignment="Top" Width="120" IsEnabled="False" Canvas.Left="546" Canvas.Top="263">
+            <ComboBoxItem />
+        </ComboBox>
+        <TextBlock Height="16" HorizontalAlignment="Left"  Name="lblNoUser" VerticalAlignment="Bottom" Width="127" Foreground="Red" Text="Must have a recipient." Visibility="Collapsed" Canvas.Top="157" Canvas.Left="53" />
+        <TextBlock Text="Must have a subject." Foreground="Red" Height="16" HorizontalAlignment="Left"  Name="lblNoSubject" VerticalAlignment="Bottom" Width="127" Visibility="Collapsed" Canvas.Top="186" Canvas.Left="53" />
+        <TextBlock Height="55" HorizontalAlignment="Left" Name="lblNoDupes" Text="Cannot send to same member twice." VerticalAlignment="Bottom" TextWrapping="Wrap" Foreground="Red" Grid.Column="1" Visibility="Collapsed" Canvas.Left="671" Canvas.Top="225"  />
+    </Canvas>
+</navigation:Page>
+

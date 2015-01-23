@@ -1,0 +1,19 @@
+﻿<controls:ChildWindow x:Class="DuelPortalCS.Views.frmEdit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="442" Height="474"
+           Title="Choose Existing Card" UseLayoutRounding="False" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="188,32,0,0" Name="TextBox1" VerticalAlignment="Top" Width="181" Text="" TextChanged="TextBox1_TextChanged" MouseLeftButtonDown="TextBox1_MouseLeftButtonDown" />
+        <ListBox Height="284" HorizontalAlignment="Left" Margin="60,101,0,0" Name="lstCards" VerticalAlignment="Top" Width="307" />
+        <Button Content="Choose" Height="23" HorizontalAlignment="Left" Margin="134,391,0,0" Name="cmdChoose" VerticalAlignment="Top" Width="158" Click="cmdChoose_Click" />
+        <sdk:Label Height="20" HorizontalAlignment="Left" Margin="62,69,0,0" Name="label1" VerticalAlignment="Top" Width="120" Content="Filter by Set" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="188,69,0,0" Name="cmbFilter" VerticalAlignment="Top" Width="179" SelectionChanged="cmbFilter_SelectionChanged" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="60,32,0,0" Name="label2" VerticalAlignment="Top" Width="120" Content="Filter by Name" />
+    </Grid>
+</controls:ChildWindow>

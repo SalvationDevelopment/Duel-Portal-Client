@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DuelPortalCS.Web" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DuelPortalCS.Web" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCardDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CardDetails" nillable="true" type="tns:CardDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCardDetails" nillable="true" type="tns:ArrayOfCardDetails" />
+  <xs:complexType name="CardDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ATK" type="xs:int" />
+      <xs:element minOccurs="0" name="Attribute" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Counters" type="xs:byte" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEF" type="xs:int" />
+      <xs:element minOccurs="0" name="Facedown" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Flavor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsItHorizontal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Level" type="xs:int" />
+      <xs:element minOccurs="0" name="Limit" type="xs:int" />
+      <xs:element minOccurs="0" name="Lore" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OpponentOwned" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SpecialSet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardDetails" nillable="true" type="tns:CardDetails" />
+  <xs:complexType name="CardChangeData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cardHasImageNow" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="cardSuccess" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="imageSuccess" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="newCardTrueID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardChangeData" nillable="true" type="tns:CardChangeData" />
+  <xs:complexType name="LoginRegisterData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FailMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pool" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Verified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoginRegisterData" nillable="true" type="tns:LoginRegisterData" />
+  <xs:complexType name="UserData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Allow_Messaging" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rating" type="xs:double" />
+      <xs:element minOccurs="0" name="Rating_Number" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserData" nillable="true" type="tns:UserData" />
+</xs:schema>

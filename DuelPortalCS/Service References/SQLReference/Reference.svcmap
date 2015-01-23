@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dbb76c99-ae65-47a8-bb62-2f001a3a90c7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55555/Service1Console.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service1Console4.xsd" MetadataType="Schema" ID="784da724-f486-47f6-bb0f-010c5c1278d5" SourceId="1" SourceUrl="http://localhost:55555/Service1Console.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service1Console1.wsdl" MetadataType="Wsdl" ID="e7e4d2e5-4f9a-47e6-8163-4a1eebbbda82" SourceId="1" SourceUrl="http://localhost:55555/Service1Console.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Service1Console.disco" MetadataType="Disco" ID="bb36edc2-5200-4147-a545-6859870af26b" SourceId="1" SourceUrl="http://localhost:55555/Service1Console.svc?disco" />
+    <MetadataFile FileName="Service1Console11.wsdl" MetadataType="Wsdl" ID="0bfcf709-4294-4746-854f-465db0fe473e" SourceId="1" SourceUrl="http://localhost:55555/Service1Console.svc?wsdl" />
+    <MetadataFile FileName="Service1Console41.xsd" MetadataType="Schema" ID="7576827e-2ecc-45f5-ae9d-b7c67a579c6d" SourceId="1" SourceUrl="http://localhost:55555/Service1Console.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service1Console42.xsd" MetadataType="Schema" ID="12bf74af-7b88-4941-8ecf-5fa32e8bb2d1" SourceId="1" SourceUrl="http://localhost:55555/Service1Console.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service1Console43.xsd" MetadataType="Schema" ID="377b29b5-9a3f-4a01-92b5-72039bd59ce6" SourceId="1" SourceUrl="http://localhost:55555/Service1Console.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

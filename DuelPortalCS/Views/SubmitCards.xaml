@@ -1,0 +1,120 @@
+﻿<navigation:Page x:Class="DuelPortalCS.Views.SubmitCards" 
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           Title="SubmitCards Page" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" Width="1045" Height="510">
+
+    <Grid x:Name="LayoutRoot">
+        <RadioButton Content="Monster" Height="16" HorizontalAlignment="Left" Margin="330,56,0,0" Name="radCardType_1" VerticalAlignment="Top"  Checked="radCardType_1_Checked" />
+        <RadioButton Content="Spell" Height="16" HorizontalAlignment="Left" Margin="535,56,0,0" Name="radCardType_2" VerticalAlignment="Top" Checked="radCardType_2_Checked" />
+        <RadioButton Content="Trap" Height="16" HorizontalAlignment="Left" Margin="750,56,0,0" Name="radCardType_3" VerticalAlignment="Top" Checked="radCardType_3_Checked" />
+        <TextBox Height="96" HorizontalAlignment="Left" Margin="269,311,0,0" Name="txtLore" VerticalAlignment="Top" Width="292" TextWrapping="Wrap" AcceptsReturn="True" />
+        <TextBox Height="94" HorizontalAlignment="Left" Margin="723,310,0,0" Name="txtResults" VerticalAlignment="Top" Width="292" TextWrapping="Wrap" AcceptsReturn="True" />
+        <Button Content="Generate" Height="29" HorizontalAlignment="Left" Margin="566,311,0,0" Name="cmdGenerate" VerticalAlignment="Top" Width="152" Click="cmdGenerate_Click" />
+        <Button Content="Clear" Height="23" HorizontalAlignment="Left" Margin="566,381,0,0" Name="cmdClear" VerticalAlignment="Top" Width="152" Click="cmdClear_Click" />
+        <Button Content="Upload" Height="32" HorizontalAlignment="Left" Margin="566,345,0,0" Name="cmdUpload" VerticalAlignment="Top" Width="152" FontWeight="Bold" Click="cmdUpload_Click" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="95,312,0,0" Name="txtATK" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="95,341,0,0" Name="txtDEF" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="95,370,0,0" Name="txtLVL" VerticalAlignment="Top" Width="120" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="44,315,0,0" Name="lblATKPlaceholder" Text="Attack" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="42,341,0,0" Name="lblDEFPlaceholder" Text="Defense" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="44,370,0,0" Name="lblLVLPlaceholder" Text="Level" VerticalAlignment="Top" Width="49" />
+        <TextBlock Height="18" HorizontalAlignment="Left" Margin="388,291,0,0" Name="TextBlock9" Text="Lore:" VerticalAlignment="Top" FontSize="13" />
+        <Grid Height="31" HorizontalAlignment="Left" Margin="400,14,0,0" Name="Grid1" VerticalAlignment="Top" Width="327">
+            <TextBlock Height="19" HorizontalAlignment="Left" Margin="6,6,0,0" Name="Label1" VerticalAlignment="Top" Width="48" Text="Name" />
+            <TextBox Height="23" HorizontalAlignment="Right" Margin="0,5,6,0" Name="txtCardName" VerticalAlignment="Top" Width="271" />
+        </Grid>
+        <Grid Height="80" HorizontalAlignment="Right" Margin="0,1,22,0" Name="Grid2" VerticalAlignment="Top" Width="128">
+            <TextBlock Height="22" HorizontalAlignment="Left" Margin="11,11,0,0" Name="TextBlock1" Text="Special Filter" VerticalAlignment="Top" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="11,39,0,0" Name="txtSpecialFilter" VerticalAlignment="Top" Width="102" />
+        </Grid>
+
+        <Button Content="Edit Existing Card" Height="31" HorizontalAlignment="Left" Margin="77,16,0,0" Name="cmdEditExisting" VerticalAlignment="Top" Width="147" Background="#FF0000DB" Click="cmdEditExisting_Click"></Button>
+        <Button Background="#FF0000DB" Content="Save Changes" Height="41" HorizontalAlignment="Left" Margin="95,179,0,0" Name="cmdCommit" VerticalAlignment="Top" Width="114" Visibility="Visible" Click="cmdCommit_Click" />
+        <Button Background="#FF0000DB" Content="Delete Card" Height="31" HorizontalAlignment="Left" Margin="95,225,0,0" Name="cmdDelete" VerticalAlignment="Top" Width="114" Visibility="Visible" Click="cmdDelete_Click" />
+        <Button Background="#FF0000DB" Content="Cancel Edit" Height="31" HorizontalAlignment="Left" Margin="95,261,0,0" Name="cmdCancelEdit" VerticalAlignment="Top" Width="114" Visibility="Visible" Click="cmdCancelEdit_Click" />
+        <Button Content="Generate from YCM or YugiCo\n" Height="41" HorizontalAlignment="Left" Margin="269,424,0,0" Name="cmdYCMURLGenerate" VerticalAlignment="Top" Width="110" HorizontalContentAlignment="Center" Click="cmdYCMURLGenerate_Click"/>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="388,429,0,0" Name="txtYCMURL" VerticalAlignment="Top" Width="451" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="196,551,0,0" Name="txtAddExistingImage" VerticalAlignment="Top" Width="451" Visibility="Collapsed" />
+        <Border BorderBrush="Black" BorderThickness="1" Height="110" HorizontalAlignment="Left" Margin="235,150,-25,0" x:Name="BordType" VerticalAlignment="Top" Width="785">
+            <StackPanel Name="StackTypes" Orientation="Vertical">
+                <StackPanel Height="36" Name="StackPanel2" Orientation="Horizontal">
+                    <RadioButton Content="Aqua" Height="16" Name="radType_1" Width="104" Checked="radType_CheckChanged" Margin="0,10" IsChecked="True" />
+                    <RadioButton Content="Beast" Height="16" Name="radType_2" Width="98" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Beast-Warrior" Height="16" Name="radType_3" Width="138" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Dinosaur" Height="16" Name="radType_4" Width="113" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Dragon" Height="16" Name="radType_5" Width="95" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Fairy" Height="16" Name="radType_6" Width="119" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Fiend" Height="16" Name="radType_7" Width="88"  Checked="radType_CheckChanged" />
+                </StackPanel>
+                <StackPanel Height="31" Name="StackPanel3" Orientation="Horizontal">
+                    <RadioButton Content="Fish" Height="16" Name="radType_8" Width="84" Margin="0,8,0,7" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Insect" Height="16" Name="radType_9" Width="102" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Machine" Height="16" Name="radType_10" Width="129" Margin="0,8,0,7" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Plant" Height="16" Name="radType_11" Width="100" Margin="0,8,0,7" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Psychic" Height="16" Name="radType_12" Width="98" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Pyro" Height="16" Name="radType_13" Width="87" Margin="0,8,0,7" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Reptile" Height="16" Name="radType_14" Width="105" Margin="0,8,0,7" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Rock" Height="16" Name="radType_15" Width="73" Checked="radType_CheckChanged" />
+                </StackPanel>
+                <StackPanel Height="31" Name="StackPanel4" Orientation="Horizontal">
+                    <RadioButton Content="Sea Serpent" Height="16" Name="radType_16" Width="100" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Spellcaster" Height="16" Name="radType_17" Width="128" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Thunder" Height="16" Name="radType_18" Width="121" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Warrior" Height="16" Name="radType_19" Width="107" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Winged Beast" Height="16" Name="radType_20" Width="111" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Wyrm" Height="16" Name="radType_21" Margin="0,8,0,7" Width="92" Checked="radType_CheckChanged" />
+                    <RadioButton Content="Zombie" Height="16" Name="radType_22" Checked="radType_CheckChanged" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Height="37" HorizontalAlignment="Left" Margin="235,112,0,0" Name="BordSubtype" VerticalAlignment="Top" Width="785">
+            <StackPanel Height="32" Name="StackPanel1" Orientation="Horizontal" IsHitTestVisible="True" Margin="-1,2,-1,1">
+                <CheckBox Content="Effect" Height="16" x:Name="chkMonEffects_1" Width="70" IsChecked="True" />
+                <CheckBox Content="Tuner" Height="16" x:Name="chkMonEffects_2" Width="73" />
+                <CheckBox Content="Gemini" Height="16" x:Name="chkMonEffects_3" Width="79" />
+                <CheckBox Content="Spirit" Height="16" x:Name="chkMonEffects_4" Width="81"  />
+                <CheckBox Content="Toon" Height="16" x:Name="chkMonEffects_5" Width="66" />
+                <CheckBox Content="Union" Height="16" x:Name="chkMonEffects_6" Width="66"  />
+                <CheckBox Content="Fusion" Height="16" x:Name="chkMonEffects_7" Width="69"  />
+                <CheckBox Content="Synchro" Height="16" x:Name="chkMonEffects_8" Width="79"  />
+                <CheckBox Content="Ritual" Height="16" x:Name="chkMonEffects_9" Width="61"  Margin="0,8" />
+                <CheckBox Content="Xyz" Height="18" x:Name="chkMonEffects_10" />
+            </StackPanel>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Height="31" HorizontalAlignment="Left" Margin="235,80,0,0" Name="BordIcon" VerticalAlignment="Top" Width="595">
+            <StackPanel Height="26" Name="StackPanel5" Orientation="Horizontal" Margin="-1,2,0,1">
+                <RadioButton Content="Normal" Height="16" x:Name="radSTIcon_1" Visibility="Visible" Width="89"  Margin="0,5" IsChecked="True" />
+                <RadioButton Content="Continuous" Height="16" x:Name="radSTIcon_2" Visibility="Visible" Width="97"  />
+                <RadioButton Content="Counter" Height="16" x:Name="radSTIcon_7" Visibility="Visible"  Margin="0,5" Width="86" />
+                <RadioButton Content="Field" Height="16" x:Name="radSTIcon_3" Visibility="Visible" Width="72"  Margin="0,5" />
+                <RadioButton Content="Equip" Height="16" x:Name="radSTIcon_4" Visibility="Visible" Width="83"  />
+                <RadioButton Content="Quick-Play" Height="16" x:Name="radSTIcon_5" Visibility="Visible" Width="107"  />
+                <RadioButton Content="Ritual" Height="18" x:Name="radSTIcon_6" Visibility="Visible"  />
+            </StackPanel>
+        </Border>
+        <Border Name="BordAttribute" BorderBrush="Black" BorderThickness="1" Height="32" HorizontalAlignment="Left" Margin="235,261,-25,0" VerticalAlignment="Top" Width="785">
+            <StackPanel Orientation="Horizontal" Height="28" >
+                <RadioButton Content="Light" Height="16" Margin="0,0,0,0" Name="radAttrib_2"  Width="113" IsChecked="True" />
+                <RadioButton Content="Water" Height="16" Margin="0,0,0,0" Name="radAttrib_3"  Width="109" />
+                <RadioButton Content="Wind" Height="16" Margin="0,6" x:Name="radAttrib_4"  Width="111" />
+                <RadioButton Content="Fire" Height="16" Margin="0,0,0,0" Name="radAttrib_5"  Width="105" />
+                <RadioButton Content="Earth" Height="16" Margin="0,0,0,0" Name="radAttrib_6"  Width="144" />
+                <RadioButton Content="Dark" Height="16" Margin="0,0,0,0" Name="radAttrib_1" />
+            </StackPanel>
+        </Border>
+        <CheckBox Content="Public" Height="16" HorizontalAlignment="Left" Margin="896,429,0,0" Name="chkPublic" VerticalAlignment="Top" Width="124" IsThreeState="False" Checked="chkPublic_Checked" />
+        <sdk:Label Height="41" HorizontalAlignment="Left" Margin="269,473,0,0" Name="lblYCMorYugico" VerticalAlignment="Top" Width="450" />
+        <TextBlock Height="18" HorizontalAlignment="Left" Margin="845,291,0,0" x:Name="TextBlock9_Copy" Text="Results:" VerticalAlignment="Top" FontSize="13" />
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="81" Margin="123,58,0,0" VerticalAlignment="Top" Width="55">
+            <Image x:Name="imgCardsImage" Source="/DuelPortalCS;component/Images/NoImage.png" HorizontalAlignment="Left" VerticalAlignment="Top" MouseLeftButtonUp="Image_MouseLeftButtonUp"/>
+        </Border>
+        <TextBlock Height="18" HorizontalAlignment="Left" Margin="269,404,0,0" x:Name="lblFlavorHelper" Text="CCGers: In above box, put @, then flavor text" VerticalAlignment="Top" FontSize="13" />
+        <CheckBox x:Name="chkUneditable" Content="Can Share" HorizontalAlignment="Left" Margin="895,450,0,0" VerticalAlignment="Top"/>
+    </Grid>
+
+</navigation:Page>
+
